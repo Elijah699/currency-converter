@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.rate-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 40px;
+  margin-right: 40px;
+  margin-left: 40px;
+  background: lightgreen;
+  box-shadow: 0px 20px 40px rgba(202, 137, 137, 0.06);
+  border-radius: 10px;
+}
+
+.rate-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+/* .rate-col, .cal-col {
+    padding-right: 15px;
+    padding-left: 15px
+} */
+
+.rate-col {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.exchange-box {
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 20px 30px rgb(0 0 0 / 11%);
+  /* min-height: 160px; */
+}
+
+/* .exchange-box {
+    margin-top: -30px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 150px;
+} */
+
+.cal-col {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.cal-col p {
+  font-family: 'Inter', sans-serif;
+  color: #7d91a8;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 29.05px;
+  margin: 0 40px;
+}
+
+.rate-input {
+  background: #fff;
+  border-radius: 4px;
+  height: 60px;
+  margin: 0 40px 20px;
+  display: flex;
+  border: 1px solid #ddd;
+}
+
+.left-box {
+  padding: 9px 10px 8px 22px;
+  width: 65%;
+}
+
+.right-box {
+  padding: 9px 10px 8px 18px;
+  background: #fff;
+  border-radius: 0px 4px 4px 0px;
+  width: 35%;
+  border-left: 1px solid #eee;
+}
+
+input {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  padding-left: 0;
+  color: #7d91a8;
+  border: none;
+  outline: none;
+  float: left;
+  text-align: left;
+  background: none;
+  width: 90%;
+  height: 40px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+select {
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  vertical-align: middle;
+  word-wrap: normal;
+  text-transform: none;
+  outline: none;
+  padding-left: 0;
+  /* margin-top: 0.5rem; */
+  /* margin-bottom: 0.5rem; */
+  background: #fff;
+}
+
+/* select:hover {
+    background-color: #f3f3f3;
+} */
+
+.exchange-rate {
+  margin: 0 25px;
+}
+
+.exchange-rate .rate {
+  color: #0058bd;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 39px;
+}
+
+@media screen and (max-width: 800px) {
+  .rate-col {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .cal-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .rate-container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .rate-col {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .cal-col p {
+    margin: 0 10px;
+  }
+
+  .exchange-box {
+    padding: 20px;
+    margin: 0 5px;
+    box-shadow: none;
+  }
+
+  .exchange-rate {
+    margin: 0;
+  }
+
+  .exchange-rate .rate {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .rate-input {
+  margin: 0 10px 20px;
+}
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="rate-container">
+      <div class="rate-row">
+        <div class="rate-col">
+          <div class="exchange-box">
+            <div class="rate-row">
+              <div class="cal-col">
+                <p>You Send</p>
+                <div class="rate-input">
+                  <div class="left-box">
+                    <input
+                      type="number"
+                      placeholder="0.00"
+                      name="fromCurrency"
+                      id="fromCurrency"
+                      oninput="calculateToReceive()"
+                    />
+                  </div>
+                  <div class="right-box">
+                    <select name="chooseFromCountry" id="chooseFromCountry">
+                      <!-- <option value="CAD">&#127464;&#127462; CAD</option>
+                      <option value="NGN">&#127475;&#127468; NGN</option>
+                      <option value="USD">&#127482;&#127480; USD</option>
+                      <option value="GBP">&#127468;&#127463; GBP</option> -->
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="cal-col">
+                <p>Receiver gets</p>
+                <div class="rate-input">
+                  <div class="left-box">
+                    <input
+                      type="number"
+                      placeholder="0.00"
+                      name="toCurrency"
+                      id="toCurrency"
+                      oninput="calculateToSend()"
+                    />
+                  </div>
+                  <div class="right-box">
+                    <select name="chooseToCountry" id="chooseToCountry">
+                      <!-- <option value="NGN">&#127475;&#127468; NGN</option>
+                      <option value="USD">&#127482;&#127480; USD</option>
+                      <option value="GBP">&#127468;&#127463; GBP</option>
+                      <option value="CAD">&#127464;&#127462; CAD</option> -->
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="exchange-rate">
+              <h6 class="rate">
+                <span class="fromRate"></span> =
+                <span class="toRate"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
