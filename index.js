@@ -1,8 +1,9 @@
 const currencyRates = {
-  NGN: { USD: 0.0013, GBP: 0.0015, CAD: 0.0018 },
+  NGN: { USD: 0.0013, GBP: 0.0015, CAD: 0.0018, EUR: 0.0014 },
   USD: { NGN: 700 },
   GBP: { NGN: 600 },
-  CAD: { NGN: 500 }
+  CAD: { NGN: 500 },
+  EUR: { NGN: 650 }
 };
 
 let fromCurrInput = document.getElementById("fromCurrency");
@@ -48,28 +49,35 @@ chooseToCountry.addEventListener("input", calculateToReceive);
 chooseFromCountry.addEventListener("input", calculateToReceive);
 chooseToCountry.addEventListener("input", calculateToSend);
 
+let nigeria = String.fromCodePoint(0x1F1F3,0x1F1EC);
+let uk = String.fromCodePoint(0x1F1EC,0x1F1E7);
+let canada = String.fromCodePoint(0x1F1E8,0x1F1E6);
+let dollar = String.fromCodePoint(0x1F1FA,0x1F1F8);
+let eur = String.fromCodePoint(0x1F1EA,0x1F1FA);
+
 let options = [
-  
+
   {
     value: "USD",
-    label: "USD"
-    // &#127482;&#127480;
+    label: `${dollar} USD`
   },
   {
     value: "GBP",
-    label: "GBP"
-    // &#127468;&#127463;
+    label: `${uk} GBP`
   },
   {
     value: "CAD",
-    label: "CAD"
-    // &#127464;&#127462;
+    label: `${canada} CAD`
+  },
+  {
+    value: "EUR",
+    label: `${eur} EUR`
   },
   {
     value: "NGN",
-    label: "NGN"
-    // &#127475;&#127468;
+    label: `${nigeria} NGN`
   },
+
 ];
 
 let secondOptions = options;
@@ -77,7 +85,7 @@ let secondOptions = options;
 const oneOption = [
   {
     value: 'NGN',
-     label: 'NGN',
+     label: `${nigeria} NGN`,
   }
 ]
 
@@ -97,18 +105,9 @@ function setTOCountryOptions() {
   getRate();
 }
 
-function handleFirstChange(e) {
-  if (e.target.value === "NGN") {
-    chooseToCountry.options.length = 0;
-  secondOptions.forEach((option) => {
-    let newOption = new Option(option.label, option.value);
-    chooseToCountry.add(newOption, undefined);
-  });
-  getRate();
-  }
-}
 
-function setSecondChange() {
+
+function setFromOptions() {
   chooseFromCountry.options.length = 0;
   options.forEach((option) => {
     let newOption = new Option(option.label, option.value);
@@ -117,9 +116,34 @@ function setSecondChange() {
   getRate();
 }
 
-function handleSecondChange(e) {
+function setToOptions() {
+  chooseToCountry.options.length = 0;
+  options.forEach((option) => {
+    let newOption = new Option(option.label, option.value);
+    chooseToCountry.add(newOption, undefined);
+  });
+  getRate();
+}
+
+
+
+function handleFromCountryChange(e) {
   if (e.target.value === "NGN") {
-    setSecondChange();
+    setToOptions();
+    chooseFromCountry.options.length = 0;
+  oneOption.forEach((option) => {
+    let newOption = new Option(option.label, option.value);
+    chooseFromCountry.add(newOption, undefined);
+  });
+  getRate();
+  }
+}
+
+
+
+function handleToCountryChange(e) {
+  if (e.target.value === "NGN") {
+    setFromOptions();
     chooseToCountry.options.length = 0;
     oneOption.forEach((option) => {
     let newOption = new Option(option.label, option.value);
@@ -131,5 +155,5 @@ function handleSecondChange(e) {
 
 window.addEventListener("load", setFromCountryOptions);
 window.addEventListener("load", setTOCountryOptions);
-chooseFromCountry.addEventListener("change", handleFirstChange);
-chooseToCountry.addEventListener("change", handleSecondChange);
+chooseFromCountry.addEventListener("change", handleFromCountryChange);
+chooseToCountry.addEventListener("change", handleToCountryChange)

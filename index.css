@@ -9,7 +9,7 @@
   margin-top: 40px;
   margin-right: 40px;
   margin-left: 40px;
-  background: lightgreen;
+  background: linear-gradient(92.31deg, #FFFFFF 0%, #F1FAFC 57.1%, #FFFFFF 114.21%);
   box-shadow: 0px 20px 40px rgba(202, 137, 137, 0.06);
   border-radius: 10px;
 }
@@ -70,14 +70,14 @@
 
 .left-box {
   padding: 9px 10px 8px 22px;
-  width: 65%;
+  width: 75%;
 }
 
 .right-box {
   padding: 9px 10px 8px 18px;
   background: #fff;
   border-radius: 0px 4px 4px 0px;
-  width: 35%;
+  width: 25%;
   border-left: 1px solid #eee;
 }
 
@@ -100,12 +100,14 @@ input {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
 
 /* Firefox */
 input[type='number'] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 select {
@@ -144,12 +146,38 @@ select {
   line-height: 39px;
 }
 
+@media screen and (max-width: 1150px) {
+
+  .left-box {
+    width: 70%;
+  }
+
+  .right-box {
+    width: 30%;
+    padding-left: 3px;
+  }
+
+  select {
+    padding: 0;
+    font-size: 13px;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .rate-col {
     position: relative;
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
+  }
+
+  .left-box {
+    width: 65%;
+  }
+
+  .right-box {
+    width: 35%;
+    padding-left: 3px;
   }
 }
 
@@ -181,6 +209,20 @@ select {
     box-shadow: none;
   }
 
+  .left-box {
+    width: 72%;
+  }
+
+  .right-box {
+    width: 28%;
+    padding-left: 5px;
+  }
+
+  select {
+    padding: 0;
+    font-size: 13px;
+  }
+
   .exchange-rate {
     margin: 0;
   }
@@ -193,4 +235,15 @@ select {
   .rate-input {
   margin: 0 10px 20px;
 }
+}
+
+
+@media screen and (max-width: 375px) {
+  .left-box {
+    width: 68%;
+  }
+
+  .right-box {
+    width: 32%;
+  }
 }
